@@ -1,17 +1,17 @@
 <script context="module">
 	export async function load({ params, fetch }) {
 		const res = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
-		const json = await res.json();
+		const text = await res.text();
 		return {
 			props: {
-				json
+				text
 			}
 		};
 	}
 </script>
 
 <script>
-	export let json;
+	export let text;
 </script>
 
-<div>{JSON.stringify(json)}</div>
+<div>{text}</div>
