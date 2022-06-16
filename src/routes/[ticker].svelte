@@ -1,8 +1,6 @@
 <script context="module">
 	export async function load({ params, fetch }) {
-		const res = await fetch(
-			`https://api.stockanalysis.com/wp-json/sa/info?s=${params.ticker}&t=stocks`
-		);
+		const res = await fetch(`https://api.stockanalysis.com/wp-json/sa/info?s=AAPL&t=stocks`);
 		const text = await res.text();
 		return {
 			props: {
