@@ -1,6 +1,12 @@
 <script context="module">
 	export async function load({ params, fetch }) {
-		const res = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+		const options = {
+			headers: {
+				'Content-Type': 'text/JSON'
+			}
+		};
+
+		const res = await fetch(`https://jsonplaceholder.typicode.com/todos/1`, options);
 		const text = await res.text();
 		return {
 			props: {
