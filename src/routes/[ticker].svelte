@@ -3,10 +3,10 @@
 		const res = await fetch(
 			`https://api.stockanalysis.com/wp-json/sa/info?s=${params.ticker}&t=stocks`
 		);
-
+		const text = await res.text();
 		return {
 			props: {
-				text: await res.text()
+				text
 			}
 		};
 	}
